@@ -15,6 +15,15 @@ public class Main {
                 .stream()
                 .map(item -> item + " "+ lastNames.get(rand.nextInt(lastNames.size()))).collect(Collectors.toList());
 
+        System.out.println("Full names");
         fullNames.forEach(item -> System.out.println(item));
+
+        Collection<String> filteredNames = fullNames
+                .stream()
+                .filter(item -> item.contains("Tomato"))
+                .collect(Collectors.toList());
+
+        System.out.println("\nFiltered names");
+        filteredNames.forEach(item -> System.out.println(item));
     }
 }
