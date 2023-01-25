@@ -31,6 +31,9 @@ public class Main {
                         Collectors.groupingBy(element -> element.split(" ")[1])
                 );
 
-
+        namesGroupedByLastName.forEach((lastname, nameList) -> {
+            System.out.println("\nLast name: "+ lastname+ "\n");
+            nameList.forEach(name -> System.out.println(name));
+        });
     }
 }
