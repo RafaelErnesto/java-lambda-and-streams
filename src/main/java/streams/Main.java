@@ -35,5 +35,10 @@ public class Main {
             System.out.println("\nLast name: "+ lastname+ "\n");
             nameList.forEach(name -> System.out.println(name));
         });
+
+        List<Integer> integers = List.of(1,2,3,4,5,6,7,8,9);
+        int sum = integers.stream()
+                .reduce(0, (accumulator, element) -> accumulator += element);
+        System.out.println("Sum of numbers: "+ sum);
     }
 }
