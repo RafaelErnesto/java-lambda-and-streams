@@ -1,8 +1,6 @@
 package streams;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -25,5 +23,14 @@ public class Main {
 
         System.out.println("\nFiltered names");
         filteredNames.forEach(item -> System.out.println(item));
+
+
+        Map<String, List<String>> namesGroupedByLastName = fullNames
+                .stream()
+                .collect(
+                        Collectors.groupingBy(element -> element.split(" ")[1])
+                );
+
+
     }
 }
