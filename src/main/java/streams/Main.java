@@ -1,11 +1,13 @@
 package streams;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         List<String> firstNames = List.of("John", "Marie", "Bob", "Amanda", "Will", "James");
         List<String> lastNames = List.of("Cabbage", "Carrot", "Tomato", "Lettuce", "Potato");
         Random rand = new Random();
@@ -56,5 +58,17 @@ public class Main {
                 .map(e -> String.valueOf(e))
                 .collect(Collectors.joining(","));
         System.out.println(joinedStringNumbers);
+
+        try {
+            //## STREAM FROM FILE
+            List<String> users = Files.lines(Paths.get("users.csv"))
+                    .skip(1)
+                    .map(line -> line.replace(",", " "))
+                    .collect(Collectors.toList());
+            users.forEach(element -> System.out.println(element));
+
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+        }
     }
 }
