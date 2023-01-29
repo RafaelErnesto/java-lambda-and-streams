@@ -59,6 +59,13 @@ public class Main {
                 .collect(Collectors.joining(","));
         System.out.println(joinedStringNumbers);
 
+        //## PEEK
+        integers.stream()
+                .peek(e ->  e.toString())
+                .collect(Collectors.toList());
+
+        //##
+
         try {
             //## STREAM FROM FILE
             List<String> users = Files.lines(Paths.get("users.csv"))
