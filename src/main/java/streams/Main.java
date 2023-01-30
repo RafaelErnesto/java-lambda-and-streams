@@ -64,7 +64,13 @@ public class Main {
                 .peek(e ->  e.toString())
                 .collect(Collectors.toList());
 
-        //##
+        //## FIND FIRST
+        int foundInteger = integers.stream()
+                .filter(e -> e > 6)
+                .findFirst()
+                .get();
+
+        System.out.println("First integer found: "+foundInteger);
 
         try {
             //## STREAM FROM FILE
