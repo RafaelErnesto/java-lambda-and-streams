@@ -72,6 +72,18 @@ public class Main {
 
         System.out.println("First integer found: "+foundInteger);
 
+        //##FLATMAP
+        List<List<Integer>> nestedIntegers = List.of(
+                List.of(1),
+                List.of(2),
+                List.of(3),
+                List.of(4)
+        );
+
+        List<Integer> listOfIntegers = nestedIntegers.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
         try {
             //## STREAM FROM FILE
             List<String> users = Files.lines(Paths.get("users.csv"))
