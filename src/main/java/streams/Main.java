@@ -47,6 +47,16 @@ public class Main {
                 .reduce(0, (accumulator, element) -> accumulator += element);
         System.out.println("Sum of numbers: "+ sum);
 
+
+        //##REDUCE + COMBINER
+
+        String resultString = integers.stream()
+                        .reduce("",
+                                (arg1, arg2) -> arg1.toString().concat(arg2.toString()),
+                                (n1, n2) -> n1.concat(n2)
+                        );
+        System.out.println(resultString);
+
         //## SKIP AND LIMIT
         integers.stream()
                 .skip(2)
