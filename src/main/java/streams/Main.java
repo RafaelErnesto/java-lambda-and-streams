@@ -84,6 +84,12 @@ public class Main {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
+
+        long listOfIntegersSize = listOfIntegers.stream()
+                .count();
+
+        System.out.println("listOfIntegersSize: "+listOfIntegersSize);
+
         try {
             //## STREAM FROM FILE
             List<String> users = Files.lines(Paths.get("users.csv"))
