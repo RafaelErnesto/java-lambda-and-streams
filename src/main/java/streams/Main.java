@@ -57,6 +57,11 @@ public class Main {
                         );
         System.out.println(resultString);
 
+
+        integers.stream()
+                .dropWhile((e) -> e < 4)
+                .collect(Collectors.toList());
+
         //## SKIP AND LIMIT
         integers.stream()
                 .skip(2)
