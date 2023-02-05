@@ -62,6 +62,11 @@ public class Main {
                 .dropWhile((e) -> e < 4)
                 .collect(Collectors.toList());
 
+
+        integers.stream()
+                .allMatch(e -> e == 2);
+
+
         //## SKIP AND LIMIT
         integers.stream()
                 .skip(2)
